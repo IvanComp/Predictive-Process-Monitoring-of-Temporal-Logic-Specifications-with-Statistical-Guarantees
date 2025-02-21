@@ -1,0 +1,5 @@
+**/dataset
+**/Local/img
+**/Docker/img
+**/__pycache__/
+.DS_Store
