@@ -187,18 +187,3 @@ def evaluate_robustness_semantics(trace, formula):
 
 def evaluate_boolean_semantics(trace, formula):
     return BooleanSemantics(trace =trace).visit(formula)
-    
-
-#formula = "G[0,INF](p --> F[0,2] q)"
-#formula = "F[1,5](F[0,10] q)"
-# formula = "p U[10,15] q"
-#formula = "(F[1,2] p) & (F[4,5] q)"
-# expr = InputStream(formula)
-# lexer = MITLLexer(input=expr)
-# token_stream = CommonTokenStream(lexer)
-# parser = MITLParser(token_stream)
-# prog_context = parser.prog()
-
-# trace = [(0,{"q"}),(7, {"p"}),(12.5,{"q"})]
-# a = TimeRobustnessSemantics(trace =trace).visit(prog_context)
-# print(a)
