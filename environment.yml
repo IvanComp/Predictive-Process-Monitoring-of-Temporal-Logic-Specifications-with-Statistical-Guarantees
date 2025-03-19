@@ -90,4 +90,3 @@ dependencies:
       - tzdata==2025.1
       - wcwidth==0.2.13
       - zipp==3.21.0
-prefix: /home/simones/miniconda3/envs/bpm2025
