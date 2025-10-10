@@ -3,3 +3,7 @@
 **/Docker/img
 **/__pycache__/
 .DS_Store
+**/.ipynb_checkpoints
+**/.jupyter/
+**/old/
+
