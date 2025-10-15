@@ -6,4 +6,5 @@
 **/.ipynb_checkpoints
 **/.jupyter/
 **/old/
+.idea/
 
