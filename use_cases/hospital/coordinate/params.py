@@ -44,7 +44,8 @@ MALICIOUS_FAKE_FAILURES = True   # i malevoli fingono failure (relevante in SD/C
 FIND_ROUTE_STRATEGY     = 'breadth'  # 'breadth' (BFS) | 'depth' (DFS)
 
 # affidabilità
-FAIL_PROB      = 0.0
+FAIL_PROB      =0.10
+#FAIL_PROB      =0.0
 RECOVERY_TIME  = 1800.0
 RECOVERY_DISTR = 'exponential'
 RECOVERY_TRACE = ''
@@ -74,6 +75,7 @@ COMP_TRACE  = ''
 COMM_TIME   = 0.5
 COMM_DISTR  = 'exponential'
 COMM_TRACE  = ''
+#COMM_FAIL_PROB = 0.0
 COMM_FAIL_PROB = 0.10
 
 # ---------- LOGGING ----------
@@ -99,7 +101,7 @@ LOG_RESCUE   = True  # Rescue attempt
 #  'semi-decentralized'      → SD
 #  'centralized-impprox'     → CE (importance→proximity)
 #  'centralized-proximp'     → CE (proximity→importance)
-ARCHITECTURE = 'decentralized'    # il runner lo sovrascriverà a runtime
+ARCHITECTURE = 'centralized-impprox'    # il runner lo sovrascriverà a runtime
 CE_STRATEGY  = 'imp-prox'         # se il codice lo usa direttamente
 
 # ---------- ALIAS (compat per nomi alternativi che ho visto nei tuoi log/codice) ----------

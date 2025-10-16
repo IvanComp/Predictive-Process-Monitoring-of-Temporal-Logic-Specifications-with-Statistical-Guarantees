@@ -11,7 +11,7 @@ def filter(v):
     return [a for a in v if np.isfinite(a)]
 
 
-df = pd.read_csv("./results/all_item.csv")
+df = pd.read_csv("results/all_item.csv")
 df = df[df.fp!=0]
 df["f0"] = df.apply(lambda x: to_list(x["f0"]), axis=1)
 df["f0_mean"] = df["f0"].apply(lambda x: np.mean(filter(x)))
@@ -28,7 +28,7 @@ df = df.drop('f1', axis=1)
 df.to_csv("./results/all_item_stat.csv", index=False)
 
 
-dd = pd.read_csv("./results/all_robot.csv")
+dd = pd.read_csv("results/all_robot.csv")
 dd = dd[dd.fp!=0]
 dd["f0"] = dd.apply(lambda x: to_list(x["f0"]), axis=1)
 dd["f0_mean"] = dd["f0"].apply(lambda x: np.mean(filter(x)))

@@ -54,7 +54,7 @@ def simulate(path):
 
 
 folder_path = "coordinate/results_backup/"
-# folder_path = "coordinate/results/" (USE THIS IF YOU WOULD LIKE TO RUN THE SIMULATOR, i.e, COORDINATE)
+# folder_path = "coordinate/results/" #(USE THIS IF YOU WOULD LIKE TO RUN THE SIMULATOR, i.e, COORDINATE)
 
 
 files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]

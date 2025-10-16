@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # runParallelSim.py — 3 esperimenti (FD, SD, CE), 3 CSV eventi + 1 simtime_all.csv
 
-import set_seed
 import os
 import sys
 import time
