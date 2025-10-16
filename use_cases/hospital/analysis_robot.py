@@ -1,15 +1,10 @@
 import os
-import pickle
 import re
+from collections import defaultdict
 
 import pandas as pd
 
 from mitl import load_formula, evaluate_robustness_semantics
-
-with open('../../old/dest_time_bounds.pkl', 'rb') as f:
-    dest_time_bounds = pickle.load(f)
-
-from collections import defaultdict
 
 
 def merge_events(data):
@@ -40,7 +35,8 @@ def generate(df):
 
 formula0 = load_formula(f'G[0,INF](fail --> X[0,2500] recover)')
 
-#evaluate_robustness_semantics(tr.iloc[0].traces[:-2], formula0)
+
+# evaluate_robustness_semantics(tr.iloc[0].traces[:-2], formula0)
 def simulate(path):
     df = pd.read_csv(path)
     df['event'] = df['event'].str.lower()

@@ -6,7 +6,7 @@ import pandas as pd
 
 from mitl import load_formula, evaluate_robustness_semantics
 
-with open('../../old/dest_time_bounds.pkl', 'rb') as f:
+with open('./results/dest_time_bounds.pkl', 'rb') as f:
     dest_time_bounds = pickle.load(f)
 
 from collections import defaultdict

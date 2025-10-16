@@ -12,8 +12,8 @@ importance = df.groupby('itemId')['itemImportance'].max().reset_index()
 times['importance'] = importance["itemImportance"]
 # times.groupby(['dest','importance'])['tot'].agg(['mean', 'std']).reset_index()
 destination_time = times.groupby('dest')['tot'].agg(['mean','std']).reset_index()
-destination_time["lb"] = destination_time["mean"] - 1.0 * destination_time["std"]
-destination_time["ub"] = destination_time["mean"] + 1.0 * destination_time["std"]
+destination_time["lb"] = destination_time["mean"] - 1.5 * destination_time["std"]
+destination_time["ub"] = destination_time["mean"] + 1.5 * destination_time["std"]
 dest_time_bounds = destination_time[["lb","ub"]].to_dict()
 
 import pickle
