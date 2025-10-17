@@ -76,20 +76,20 @@ print(" ")
 perturbations = [0.1, 1, 2, 3, 4, 5, 6]
 traces = [("sigma_a", sigma_a), ("sigma_b", sigma_b), ("sigma_c", sigma_c)]
 
-# print("TABLE OF USE CASE 1")
-# print("----------------------------------")
-# print("trajectory, pert, mean, std, prob")
-# print("----------------------------------")
-# for trace in traces:
-#     for perturbation in perturbations:
-#         perturbed_traces = [apply_perturbation(trace[1], perturbation) for _ in range(1000)]
-#         robustness_values = [evaluate_robustness_semantics(perturbed_trace, load_formula(formula)) for perturbed_trace
-#                              in
-#                              perturbed_traces]
-#         boolean_values = [evaluate_boolean_semantics(perturbed_trace, load_formula(formula)) for perturbed_trace in
-#                           perturbed_traces]
-#         print(trace[0], perturbation, np.mean(robustness_values), np.std(robustness_values), np.mean(boolean_values))
-# print("==== END OF TABLE ====")
+print("TABLE OF USE CASE 1")
+print("----------------------------------")
+print("trajectory, pert, mean, std, prob")
+print("----------------------------------")
+for trace in traces:
+    for perturbation in perturbations:
+        perturbed_traces = [apply_perturbation(trace[1], perturbation) for _ in range(1000)]
+        robustness_values = [evaluate_robustness_semantics(perturbed_trace, load_formula(formula)) for perturbed_trace
+                             in
+                             perturbed_traces]
+        boolean_values = [evaluate_boolean_semantics(perturbed_trace, load_formula(formula)) for perturbed_trace in
+                          perturbed_traces]
+        print(trace[0], perturbation, np.mean(robustness_values), np.std(robustness_values), np.mean(boolean_values))
+print("==== END OF TABLE ====")
 
 ###-
 ###- GENERATE FIGURE OF USE CASE 1
