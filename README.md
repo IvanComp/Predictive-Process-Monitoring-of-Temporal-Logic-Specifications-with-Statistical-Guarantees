@@ -15,7 +15,7 @@ The Monitoring algorithm is available in ``mitl/`` folder. Please refer to the d
 
 ## 🧪 How to Reproduce Experiment Results
 
-All the results available in the paper can be reproduced executing code contained in ``use_cases/`` folder.  Please refer to the dedicated [README](use_cases/README) file contained in it.
+All the results available in the paper can be reproduced executing code contained in ``use_cases/`` folder.  Please refer to the dedicated [README](use_cases/README.md) file contained in it.
 
 ## 🧩 Repository Structure
 
