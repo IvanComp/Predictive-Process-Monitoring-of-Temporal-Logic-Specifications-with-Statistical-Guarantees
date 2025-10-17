@@ -1,68 +1,56 @@
 antlr4-python3-runtime==4.13.2
+antlr4-tools==0.2.2
 asttokens==3.0.0
-comm==0.2.2
-contourpy==1.3.0
-cvxopt==1.3.2
-cycler==0.12.1
-debugpy==1.8.13
+Bottleneck @ file:///croot/bottleneck_1731058641041/work
+comm==0.2.3
+contourpy @ file:///croot/contourpy_1738160616259/work
+cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
+debugpy==1.8.17
 decorator==5.2.1
-deprecation==2.1.0
-exceptiongroup==1.2.2
-executing==2.2.0
-filelock==3.13.1
-fonttools==4.56.0
-fsspec==2024.6.1
-graphviz==0.20.3
-importlib_metadata==8.6.1
-importlib_resources==6.5.2
-intervaltree==3.1.0
-ipykernel==6.29.5
+exceptiongroup==1.3.0
+executing==2.2.1
+fonttools @ file:///home/task_175975447478154/conda-bld/fonttools_1759754869428/work
+importlib_metadata==8.7.0
+importlib_resources @ file:///home/task_175940067996674/conda-bld/importlib_resources-suite_1759400795292/work
+install-jdk==1.1.0
+ipykernel==6.30.1
 ipython==8.18.1
 jedi==0.19.2
-Jinja2==3.1.4
-joblib==1.4.2
 jupyter_client==8.6.3
-jupyter_core==5.7.2
-kiwisolver==1.4.7
-lxml==5.3.1
-MarkupSafe==2.1.5
-matplotlib==3.9.4
+jupyter_core==5.8.1
+kiwisolver @ file:///croot/kiwisolver_1672387140495/work
+matplotlib==3.9.2
 matplotlib-inline==0.1.7
-mpmath==1.3.0
+mkl-service==2.4.0
+mkl_fft @ file:///io/mkl313/mkl_fft_1730824109137/work
+mkl_random @ file:///io/mkl313/mkl_random_1730823916628/work
 nest-asyncio==1.6.0
-networkx==3.2.1
-numpy==2.0.2
-packaging==24.2
-pandas==2.2.3
-parso==0.8.4
+numexpr @ file:///croot/numexpr_1730215937391/work
+numpy @ file:///croot/numpy_and_numpy_base_1725470312869/work/dist/numpy-2.0.1-cp39-cp39-linux_x86_64.whl#sha256=d86a49760b169e0c4fb8c00d248077a0474f640071b7ef584afd5ad4f03b9428
+packaging @ file:///croot/packaging_1753775359799/work
+pandas @ file:///home/task_175982151591391/conda-bld/pandas_1759822246465/work/dist/pandas-2.3.3-cp39-cp39-linux_x86_64.whl#sha256=46f49f8c0e38edb70c0c31fa0bcb595d56fee69beeb19b55154de62090265ed3
+parso==0.8.5
 pexpect==4.9.0
-pillow==11.1.0
-platformdirs==4.3.6
-pm4py==2.7.14.2
-prompt_toolkit==3.0.50
-psutil==7.0.0
+pillow @ file:///croot/pillow_1752524526621/work
+platformdirs==4.4.0
+prompt_toolkit==3.0.52
+psutil==7.1.0
 ptyprocess==0.7.0
 pure_eval==0.2.3
-pydotplus==2.0.2
-Pygments==2.19.1
-pyparsing==3.2.1
-python-dateutil==2.9.0.post0
-pytz==2025.1
-pyzmq==26.3.0
-scikit-learn==1.6.1
-scipy==1.13.1
-six==1.17.0
-sortedcontainers==2.4.0
+Pygments==2.19.2
+pyparsing @ file:///croot/pyparsing_1731445506121/work
+PyQt6==6.7.1
+PyQt6_sip @ file:///croot/pyqt-split_1753427276959/work/pyqt_sip
+python-dateutil @ file:///croot/python-dateutil_1716495738603/work
+pytz @ file:///croot/pytz_1752135852232/work
+pyzmq==27.1.0
+sip @ file:///croot/sip_1738856193618/work
+six @ file:///croot/six_1744271502820/work
 stack-data==0.6.3
-sympy==1.13.1
-threadpoolctl==3.6.0
-torch==2.6.0+cpu
-torchaudio==2.6.0+cpu
-torchvision==0.21.0+cpu
-tornado==6.4.2
-tqdm==4.67.1
+tomli @ file:///croot/tomli_1753774587605/work
+tornado @ file:///croot/tornado_1748956929273/work
 traitlets==5.14.3
-typing_extensions==4.12.2
-tzdata==2025.1
-wcwidth==0.2.13
-zipp==3.21.0
+typing_extensions==4.15.0
+tzdata @ file:///croot/python-tzdata_1746123641790/work
+wcwidth==0.2.14
+zipp @ file:///croot/zipp_1732630741423/work
