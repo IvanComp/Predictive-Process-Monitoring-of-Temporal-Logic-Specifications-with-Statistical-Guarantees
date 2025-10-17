@@ -76,20 +76,20 @@ print(" ")
 perturbations = [0.1, 1, 2, 3, 4, 5, 6]
 traces = [("sigma_a", sigma_a), ("sigma_b", sigma_b), ("sigma_c", sigma_c)]
 
-print("TABLE OF USE CASE 1")
-print("----------------------------------")
-print("trajectory, pert, mean, std, prob")
-print("----------------------------------")
-for trace in traces:
-    for perturbation in perturbations:
-        perturbed_traces = [apply_perturbation(trace[1], perturbation) for _ in range(1000)]
-        robustness_values = [evaluate_robustness_semantics(perturbed_trace, load_formula(formula)) for perturbed_trace
-                             in
-                             perturbed_traces]
-        boolean_values = [evaluate_boolean_semantics(perturbed_trace, load_formula(formula)) for perturbed_trace in
-                          perturbed_traces]
-        print(trace[0], perturbation, np.mean(robustness_values), np.std(robustness_values), np.mean(boolean_values))
-
+# print("TABLE OF USE CASE 1")
+# print("----------------------------------")
+# print("trajectory, pert, mean, std, prob")
+# print("----------------------------------")
+# for trace in traces:
+#     for perturbation in perturbations:
+#         perturbed_traces = [apply_perturbation(trace[1], perturbation) for _ in range(1000)]
+#         robustness_values = [evaluate_robustness_semantics(perturbed_trace, load_formula(formula)) for perturbed_trace
+#                              in
+#                              perturbed_traces]
+#         boolean_values = [evaluate_boolean_semantics(perturbed_trace, load_formula(formula)) for perturbed_trace in
+#                           perturbed_traces]
+#         print(trace[0], perturbation, np.mean(robustness_values), np.std(robustness_values), np.mean(boolean_values))
+# print("==== END OF TABLE ====")
 
 ###-
 ###- GENERATE FIGURE OF USE CASE 1
@@ -104,10 +104,13 @@ def apply_perturbation_with_sum(trajectory, delta):
 
 sum_pert = []
 rob_pert = []
-for _ in range(5000):
-    trace, s = apply_perturbation_with_sum(sigma_a, 2.0)
+boolean_pert = []
+for _ in range(20000):
+    trace, s = apply_perturbation_with_sum(sigma_b, 2.0)
     robustness = evaluate_robustness_semantics(trace, load_formula(formula))
+    boolean_semantics = evaluate_boolean_semantics(trace, load_formula(formula))
     rob_pert.append(robustness)
+    boolean_pert.append(boolean_semantics)
     sum_pert.append(s)
 
 import matplotlib.pyplot as plt
@@ -119,24 +122,29 @@ plt.rcParams.update({
     'legend.fontsize': 10  # legend text
 })
 
-plt.scatter(sum_pert, rob_pert, cmap='viridis', s=3)
-plt.scatter(0, 5, color='k', s=60, marker='o', edgecolors='white', zorder=3, label='Point (0, 5)')
-plt.text(-0.5, 4.5, r'$\sigma_a$', fontsize=10, color='k')
+colors = np.where(boolean_pert, '#1f77b4', '#d62728')
+plt.scatter(sum_pert, rob_pert, c = colors,  s=3)
+plt.scatter(0, 3, color='k', s=60, marker='o', edgecolors='white', zorder=3, label='Point (0, 5)')
+plt.text(-0.5, 2.5, r'$\sigma_b$', fontsize=10, color='k')
 
 plt.axhline(y=0, color='k', linestyle='--', linewidth=1, label='y = 5')
-plt.axvline(x=5, ymin=0, ymax=10, color='k', linestyle='--', linewidth=1, label='x = 5')
+plt.axvline(x=3, ymin=0, ymax=10, color='k', linestyle='--', linewidth=1, label='x = 5')
 x_line = np.linspace(0, 12, 100)
-y_line = -x_line + 5
-plt.plot(x_line, y_line, color='k', linestyle='-', linewidth=2.5, label='y = -x + 5')
+y_line = -x_line + 3
+plt.plot(x_line, y_line, color='k', linestyle='-', linewidth=2.5, label='y = -x + 3')
+y_line = x_line + 3
+plt.plot(x_line, y_line, color='k', linestyle='-', linewidth=2.5, label='y = x + 3')
+
 outline = withStroke(linewidth=6, foreground="white")
 
-plt.text(9, -2, 'C', fontsize=30, color='k', path_effects=[outline])
-plt.text(9, 4, 'B', fontsize=30, color='k')
-plt.text(3, 4, 'A', fontsize=30, color='k', path_effects=[outline])
+plt.text(8,  -2, 'C', fontsize=30, color='k', path_effects=[outline])
+plt.text(8, 3, 'B', fontsize=30, color='k',path_effects=[outline])
+plt.text(2, 3, 'A', fontsize=30, color='k', path_effects=[outline])
 
 plt.tight_layout()
 
-plt.xlim(-1, 12)
+plt.xlim(-1, 10)
+plt.ylim(-7, 6)
 plt.xlabel(r'$\ell^1$ perturbation')
 plt.ylabel(r"robustness ($\rho$)")
 plt.savefig("./results/figure.pdf", bbox_inches="tight")  # vector for journals
